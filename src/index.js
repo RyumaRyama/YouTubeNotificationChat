@@ -28,20 +28,23 @@ ws.onmessage = (chatItemResponse) => {
   notification.append(thumbnail);
 
   // 名前
-  const name = chatItemResponseBody.body.author.name;
+  const name = document.createElement('div');
   name.classList.add('name');
+  name.append(chatItemResponseBody.body.author.name);
   notification.append(name);
 
   // 本文
+  const messages = document.createElement('div');
+  messages.classList.add('message');
   const message = chatItem.message;
-  message.classList.add('message');
   const messageElement = message.map((item) => {
     if (item.text) return document.createTextNode(item.text);
     const emoji = document.createElement('img');
     emoji.src = item.url;
     return emoji;
   });
-  notification.append(...messageElement);
+  messages.append(...messageElement);
+  notification.append(messages);
 
   notification_viewer.append(notification);
 };
