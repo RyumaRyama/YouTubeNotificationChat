@@ -27,11 +27,26 @@ ws.onmessage = (chatItemResponse) => {
   thumbnail.src = chatItemResponseBody.body.author.thumbnail.url;
   notification.append(thumbnail);
 
+  // 通知body
+  const notificationBody = document.createElement('div');
+  notificationBody.classList.add('notification-body');
+
   // 名前
   const name = document.createElement('div');
   name.classList.add('name');
   name.append(chatItemResponseBody.body.author.name);
-  notification.append(name);
+
+  // 今
+  const now = document.createElement('div');
+  now.classList.add('now');
+  now.append('今');
+
+  const nameWrapper = document.createElement('div');
+  nameWrapper.classList.add('name-wrapper');
+  nameWrapper.append(name)
+  nameWrapper.append(now);
+
+  notificationBody.append(nameWrapper);
 
   // 本文
   const messages = document.createElement('div');
@@ -44,7 +59,13 @@ ws.onmessage = (chatItemResponse) => {
     return emoji;
   });
   messages.append(...messageElement);
-  notification.append(messages);
+
+  const messagesWrapper = document.createElement('div');
+  messagesWrapper.classList.add('messages-wrapper');
+  messagesWrapper.append(messages);
+  notificationBody.append(messagesWrapper);
+
+  notification.append(notificationBody);
 
   notification_viewer.append(notification);
 };

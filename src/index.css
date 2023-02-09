@@ -1,3 +1,57 @@
 .notification {
-  background-color: green;
+  display: flex;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 400px;
+  height: 100px;
+  border-radius: 7px;
+  align-items: center;
+
+  color: white;
+  font-size: 13px;
+
+  padding: 10px 15px;
+}
+
+.thumbnail {
+  display: flex;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.name-wrapper {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  font-size: 20px;
+  width: 290px;
+}
+
+.name {
+  /* 文字数が多いときに点々になるやつ */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.now {
+  display: flex;
+  align-self: flex-start;
+  margin-left: auto;
+  font-size: 12px;
+}
+
+.messages-wrapper {
+  display: flex;
+  height: 40px;
+}
+
+.message {
+  /* 文字数が多いときに点々になるやつ */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
