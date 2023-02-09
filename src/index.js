@@ -15,8 +15,6 @@ ws.onmessage = (chatItemResponse) => {
 
   if (!chatItem?.message) return;
 
-  const notification_viewer = document.getElementById('font-family-setting-container');
-
   // 通知全体
   const notification = document.createElement('div');
   notification.classList.add('notification');
@@ -67,5 +65,17 @@ ws.onmessage = (chatItemResponse) => {
 
   notification.append(notificationBody);
 
+  printNotification(notification);
+};
+
+// 通知を表示する
+const printNotification = (notification) => {
+  const notification_viewer = document.getElementById('font-family-setting-container');
   notification_viewer.append(notification);
+
+  // 5秒後に消す
+  setTimeout(() => {
+    notification.remove();
+    console.log('delete');
+  }, 5000);
 };

@@ -1,6 +1,9 @@
 .notification {
   display: flex;
   box-sizing: border-box;
+  position: absolute;
+  top: 30px;
+
   background-color: rgba(30, 30, 30, 0.95);
   width: 400px;
   height: 100px;
@@ -11,6 +14,10 @@
   font-size: 13px;
 
   padding: 10px 15px;
+
+  opacity: 0;
+  animation-duration: 5s;
+  animation-name: notification-move;
 }
 
 .thumbnail {
@@ -54,4 +61,24 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+
+@keyframes notification-move {
+  from {
+    opacity: 0;
+    top: 0px;
+  }
+
+  10% {
+    opacity: 1;
+    top: 30px;
+  }
+
+  97% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
