@@ -36,6 +36,8 @@
 }
 
 .name {
+  word-break: break-all;
+
   /* 文字数が多いときに点々になるやつ */
   overflow: hidden;
   display: -webkit-box;
@@ -66,7 +68,7 @@
 }
 
 .message img {
-  height: 20px;
+  height: 12px;
 }
 
 @keyframes notification-move {
