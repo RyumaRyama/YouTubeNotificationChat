@@ -50,7 +50,7 @@ const createNotification = (chatItemResponseBody) => {
 
   // 通知音
   const audio = document.createElement('audio');
-  audio.src = './teroren.mp3';
+  audio.src = './sound.mp3';
   audio.autoplay = true;
 
   // サムネイル
