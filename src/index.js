@@ -52,6 +52,7 @@ const createNotification = (chatItemResponseBody) => {
   const audio = document.createElement('audio');
   audio.src = './sound.mp3';
   audio.autoplay = true;
+  notification.append(audio);
 
   // サムネイル
   const thumbnail = document.createElement('img');
@@ -107,7 +108,7 @@ const printNotification = (notification) => {
   const notification_viewer = document.getElementById('font-family-setting-container');
   notification_viewer.append(notification);
 
-  // 5秒後に消す
+  // 3秒後に消す
   setTimeout(() => {
     notification.remove();
   }, 3000);
