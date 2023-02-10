@@ -16,7 +16,7 @@
   padding: 10px 15px;
 
   opacity: 0;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-name: notification-move;
 }
 
